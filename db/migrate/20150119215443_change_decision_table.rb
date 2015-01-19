@@ -1,6 +1,6 @@
-class CreateDecisions < ActiveRecord::Migration
+class ChangeDecisionTable < ActiveRecord::Migration
   def change
-    create_table :decisions do |t|
+    change_table :decisions do |t|
       t.string :dilemma
       t.date :needed_by
       t.string :decision_importance
@@ -12,7 +12,6 @@ class CreateDecisions < ActiveRecord::Migration
       t.text :minuses 
       t.string :intuitive_conclusion
       t.string :rational_conclusion
-      t.string :decision
       t.string :next_steps
 
       t.timestamps
