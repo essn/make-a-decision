@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119215443) do
+ActiveRecord::Schema.define(version: 20150119225309) do
 
   create_table "decisions", force: true do |t|
     t.string   "decision"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150119215443) do
     t.string   "next_steps"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|
