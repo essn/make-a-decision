@@ -11,7 +11,7 @@ class ChangeDecisionTable < ActiveRecord::Migration
       t.text :pluses
       t.text :minuses 
       t.string :intuitive_conclusion
-      t.string :rational_conclusion
+      t.string :rational_conclusionr
       t.string :next_steps
 
       t.timestamps

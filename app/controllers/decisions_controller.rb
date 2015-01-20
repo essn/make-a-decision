@@ -25,6 +25,6 @@ class DecisionsController < ApplicationController
   def decision_params
     params.require(:decision).permit(:dilemma, :needed_by, :decision_importance, :indecisiveness_level, :best_case,
                                      :worst_case, :gut_feeling, :pluses, :minuses, :intuitive_conclusion,
-                                     :rational_conclusion, :next_steps)
+                                     :rational_conclusion, :next_steps, :pipe_dream, :apocalypse)
   end
 end
