@@ -1,18 +1,41 @@
-<%= @decision.dilemma %><br>
-<%= @decision.needed_by %>
+<h1 class="text-center">Make A Decision</h1><hr>
+<div class="row">
+  <div class="col-md-12">
+    <p><strong>Dilemma:</strong> <%= @decision.dilemma %></p><hr>
+  </div>
+  <div class="col-md-6">
+    <p><strong>Date:</strong> <%= @decision.created_at.to_date.to_formatted_s(:long)  %></p><hr>
+  </div>
+  <div class="col-md-6">
+    <p><strong>Decision Needed By:</strong> <%= @decision.needed_by.to_formatted_s(:long)  %></p><hr>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <strong>Best Case Scenerio:</strong>
+    <p><%= @decision.best_case %></p>
+    <p class="text-right">Pipe Dream?</p>
+  </div>
+
+  <div class="col-md-12">
+    <strong>Worst Case Scenerio:</strong>
+    <p><%= @decision.worst_case %></p>
+    <p class="text-right">Apocalypse?</p>
+  </div>
+</div><hr>
 
 <div class="row">
   <div class='col-md-6'>
-<table class="table table-striped">
+    <table class="table">
       <thead>
         <tr>
           <th>Gut Feelings</th>
         </tr>
       </thead>
-
       <tbody>
+        <% split_and_remove_leading_spaces(@decision.gut_feeling).each do |item| %>
           <tr>
-          <% split_and_remove_leading_spaces(@decision.gut_feeling).each do |item| %>
             <td><%= item %></td>
           </tr>
         <% end %>
@@ -27,23 +50,50 @@
           <th>Pros and Cons</th>
         </tr>
       </thead>
-
       <tbody>
-            <% split_and_remove_leading_spaces(@decision.pluses).each do |item| %>
-            <tr class="success">
-            <!-- <th scope="row">+</th> -->
+        <% split_and_remove_leading_spaces(@decision.pluses).each do |item| %>
+          <tr class="success">
             <td><%= item %></td>
           </tr>
-          <% end %>
-
-          <% split_and_remove_leading_spaces(@decision.minuses).each do |item| %>
+        <% end %>
+        <% split_and_remove_leading_spaces(@decision.minuses).each do |item| %>
           <tr class="danger">
-            <!-- <th scope="row">-</th> -->
             <td><%= item %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+  </div>
+</div>
 
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <tbody>
+        <thead>
+          <tr>
+            <th>Intuitive Conclusion:</th>
+          </tr>
+        </thead>
+        <tr>
+          <td><%= @decision.intuitive_conclusion %><hr></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-6">
+    <table class="table">
+      <tbody>
+      <thead>
+      <tr>
+        <th>Rational Conclusion:</th>
+      </tr>
+      </thead>
+      <tr>
+        <td><%= @decision.rational_conclusion %><hr></td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>
