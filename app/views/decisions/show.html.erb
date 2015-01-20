@@ -1,1 +1,49 @@
-<%= @decision.dilemma %>
+<%= @decision.dilemma %><br>
+<%= @decision.needed_by %>
+
+<div class="row">
+  <div class='col-md-6'>
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Gut Feelings</th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <tr>
+          <% split_and_remove_leading_spaces(@decision.gut_feeling).each do |item| %>
+            <td><%= item %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class='col-md-6'>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Pros and Cons</th>
+        </tr>
+      </thead>
+
+      <tbody>
+            <% split_and_remove_leading_spaces(@decision.pluses).each do |item| %>
+            <tr class="success">
+            <!-- <th scope="row">+</th> -->
+            <td><%= item %></td>
+          </tr>
+          <% end %>
+
+          <% split_and_remove_leading_spaces(@decision.minuses).each do |item| %>
+          <tr class="danger">
+            <!-- <th scope="row">-</th> -->
+            <td><%= item %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>

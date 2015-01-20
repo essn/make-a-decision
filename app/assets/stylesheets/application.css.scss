@@ -1,2 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  padding-bottom: 75px;
+}
+
+.pointer {
+  cursor: pointer;
+}
