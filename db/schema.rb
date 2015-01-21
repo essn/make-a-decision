@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119235857) do
+ActiveRecord::Schema.define(version: 20150121053821) do
 
   create_table "decisions", force: true do |t|
     t.string   "decision"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150119235857) do
     t.integer  "user_id"
     t.boolean  "pipe_dream"
     t.boolean  "apocalypse"
+    t.boolean  "private"
   end
 
   create_table "users", force: true do |t|

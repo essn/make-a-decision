@@ -1,93 +1,102 @@
  <%= form_for @decision do |f| %>
 
-<h2 id="getting-started-btn" class="pointer">Getting Started</h2>
-<div id="getting-started">
-   <div class="form-group">
-      <%= f.label :dilemma %>
-      <%= f.text_field :dilemma, class: "form-control" %>
+   <div class="panel panel-default">
+     <div class="panel-heading">
+       <h4 id="getting-started-btn" class="pointer">Getting Started</h4>
+     </div>
+     <div id="getting-started" class="panel-body">
+       <div class="form-group">
+         <%= f.label :dilemma %>
+         <%= f.text_field :dilemma, class: "form-control" %>
+       </div>
+
+       <div class="form-group">
+         <%= f.label :needed_by %>
+         <%= f.date_field :needed_by, class: "form-control" %>
+       </div>
+
+       <div class="form-group">
+         <%= f.label :decision_importance %>
+         <%= f.text_field :decision_importance, class: "form-control" %>
+       </div>
+
+       <div class="form-group">
+         <%= f.label :indecisiveness_level %>
+         <%= f.text_field :indecisiveness_level, class: "form-control" %>
+       </div>
+     </div>
    </div>
 
-   <div class="form-group">
-   <%= f.label :needed_by %>
-   <%= f.date_field :needed_by, class: "form-control" %>
+   <div class="panel panel-default">
+     <div class="panel-heading">
+       <h4 id="pros-cons-btn" class="pointer">Pros and Cons</h4>
+     </div>
+     <div id="pros-cons" class="panel-body" style="display: none;">
+       <div class="form-group">
+       <%= f.label :best_case %>
+       <%= f.text_area :best_case, class: "form-control" %>
+
+       <%= f.label :pipe_dream %>
+       <%= f.check_box :pipe_dream, class: "form-control" %>
+       </div>
+
+       <div class="form-group">
+       <%= f.label :worst_case %>
+       <%= f.text_area :worst_case, class: "form-control" %>
+
+       <%= f.label :apocalypse %>
+       <%= f.check_box :apocalypse, class: "form-control" %>
+       </div>
+
+       <div class="form-group">
+       <%= f.label :gut_feeling %> (seperated by commas)
+       <%= f.text_area :gut_feeling, class: "form-control" %>
+       </div>
+
+       <div class="form-group">
+       <%= f.label :pluses %>
+       <%= f.text_area :pluses, class: "form-control" %>
+       </div>
+
+       <div class="form-group">
+       <%= f.label :minuses %>
+       <%= f.text_area :minuses, class: "form-control" %>
+       </div>
+     </div>
    </div>
 
-   <div class="form-group">
-   <%= f.label :decision_importance %>
-   <%= f.text_field :decision_importance, class: "form-control" %>
+   <div class="panel panel-default">
+     <div class="panel-heading">
+       <h4 id="next-steps-btn" class="pointer">Next Steps</h4>
+     </div>
+     <div id="next-steps" class="panel-body" style="display: none;">
+       <div class="form-group">
+       <%= f.label :intuitive_conclusion %>
+       <%= f.text_field :intuitive_conclusion, class: "form-control" %>
+       </div>
+
+       <div class="form-group">
+       <%= f.label :rational_conclusion %>
+       <%= f.text_field :rational_conclusion, class: "form-control" %>
+       </div>
+
+       <div class="form-group">
+       <%= f.label :decision %>
+       <%= f.text_field :decision, class: "form-control" %>
+       </div>
+
+       <div class="form-group">
+       <%= f.label :next_steps %>
+       <%= f.text_field :next_steps, class: "form-control" %>
+       </div>
+     </div>
    </div>
 
-   <div class="form-group">
-   <%= f.label :indecisiveness_level %>
-   <%= f.text_field :indecisiveness_level, class: "form-control" %>
-   </div>
-</div>
-
-<h2 id="pros-cons-btn" class="pointer">Pros and Cons</h2>
-<div id="pros-cons">
-   <div class="form-group">
-   <%= f.label :best_case %>
-   <%= f.text_area :best_case, class: "form-control" %>
-   
-   <%= f.label :pipe_dream %>
-   <%= f.check_box :pipe_dream, class: "form-control" %>
-   </div>
-
-   <div class="form-group">
-   <%= f.label :worst_case %>
-   <%= f.text_area :worst_case, class: "form-control" %>
-
-   <%= f.label :apocalypse %>
-   <%= f.check_box :apocalypse, class: "form-control" %>
-   </div>
-
-   <div class="form-group">
-   <%= f.label :gut_feeling %> (seperated by commas)
-   <%= f.text_area :gut_feeling, class: "form-control" %>
-   </div>
-
-   <div class="form-group">
-   <%= f.label :pluses %>
-   <%= f.text_area :pluses, class: "form-control" %>
-   </div>
-
-   <div class="form-group">
-   <%= f.label :minuses %>
-   <%= f.text_area :minuses, class: "form-control" %>
-   </div>
-</div>
-
-<h2 id="next-steps-btn" class="pointer">Next Steps</h2>
-<div id="next-steps">
-   <div class="form-group">
-   <%= f.label :intuitive_conclusion %>
-   <%= f.text_field :intuitive_conclusion, class: "form-control" %>
-   </div>
-
-   <div class="form-group">
-   <%= f.label :rational_conclusion %>
-   <%= f.text_field :rational_conclusion, class: "form-control" %>
-   </div>
-
-   <div class="form-group">
-   <%= f.label :decision %> 
-   <%= f.text_field :decision, class: "form-control" %>
-   </div>
-
-   <div class="form-group">
-   <%= f.label :next_steps %>
-   <%= f.text_field :next_steps, class: "form-control" %>
-   </div>
-</div>
-
-   <%= f.submit %>
+   <%= f.submit class: "btn btn-default" %>
 
  <% end %>
 
  <script>
-   $('#next-steps').slideUp();
-   $('#pros-cons').slideUp();
-
    $('#next-steps-btn').click(function(){
       $('#next-steps').slideToggle();
    });
