@@ -11,7 +11,7 @@
        </div>
 
        <div class="form-group">
-         <%= f.label :needed_by %>
+         <%= f.label :needed_by, "Decision needed by:" %>
          <%= f.date_field :needed_by, class: "form-control" %>
        </div>
 
@@ -34,18 +34,18 @@
      <div id="pros-cons" class="panel-body" style="display: none;">
        <div class="form-group">
        <%= f.label :best_case %>
-       <%= f.text_area :best_case, class: "form-control" %>
+       <%= f.text_area :best_case, class: "form-control" %><br>
 
-       <%= f.label :pipe_dream %>
-       <%= f.check_box :pipe_dream, class: "form-control" %>
+       <%= f.label :pipe_dream, "Pipe Dream?" %>
+       <%= f.check_box :pipe_dream %>
        </div>
 
        <div class="form-group">
        <%= f.label :worst_case %>
-       <%= f.text_area :worst_case, class: "form-control" %>
+       <%= f.text_area :worst_case, class: "form-control" %><br>
 
-       <%= f.label :apocalypse %>
-       <%= f.check_box :apocalypse, class: "form-control" %>
+       <%= f.label :apocalypse, "Apocalypse?" %>
+       <%= f.check_box :apocalypse %>
        </div>
 
        <div class="form-group">
@@ -54,12 +54,12 @@
        </div>
 
        <div class="form-group">
-       <%= f.label :pluses %>
+       <%= f.label :pluses %> (seperated by commas)
        <%= f.text_area :pluses, class: "form-control" %>
        </div>
 
        <div class="form-group">
-       <%= f.label :minuses %>
+       <%= f.label :minuses %> (seperated by commas)
        <%= f.text_area :minuses, class: "form-control" %>
        </div>
      </div>
@@ -90,6 +90,11 @@
        <%= f.text_field :next_steps, class: "form-control" %>
        </div>
      </div>
+   </div>
+
+   <div class="form-group">
+     <%= f.label "Do you want this decision to be private?" %>
+     <%= f.check_box :private %>
    </div>
 
    <%= f.submit class: "btn btn-default" %>
