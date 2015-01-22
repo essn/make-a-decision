@@ -6,10 +6,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <div class = "container">
-    <div class="col-md-6 col-md-offset-3">
-      <nav class="navbar">
+
+  <body>
+    <div class="container">
+      <nav class="navbar-default">
         <div class="container-fluid">
           <div class="navbar-text pull-right">
             <% if current_user %>
@@ -21,14 +21,16 @@
           </div>
         </div>
       </nav>
-            <% if notice %>
-      <div class="alert alert-warning" role="alert">
-        <%= flash[:notice] %>
-      </div>
+
+      <% if notice %>
+        <div class="alert alert-warning" role="alert">
+          <%= flash[:notice] %>
+        </div>
       <% end %>
+
       <h1 class="text-center">Make A Decision</h1><hr>
       <%= yield %>
     </div>
-  </div>
-</body>
+  </body>
+
 </html>

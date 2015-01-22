@@ -1,102 +1,105 @@
-<div class="row">
-  <div class="col-md-12">
-    <p><strong>Dilemma:</strong> <%= @decision.dilemma %></p><hr>
-  </div>
-  <div class="col-md-6">
-    <p><strong>Date:</strong> <%= @decision.created_at.to_date.to_formatted_s(:long)  %></p><hr>
-  </div>
-  <div class="col-md-6">
-    <p><strong>Decision Needed By:</strong> <%= @decision.needed_by.to_formatted_s(:long)  %></p><hr>
-  </div>
-</div>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <p><strong>Dilemma:</strong> <%= @decision.dilemma %></p><hr>
+      </div>
+      <div class="col-md-6">
+        <p><strong>Date:</strong> <%= @decision.created_at.to_date.to_formatted_s(:long)  %></p><hr>
+      </div>
+      <div class="col-md-6">
+        <p><strong>Decision Needed By:</strong> <%= @decision.needed_by.to_formatted_s(:long)  %></p><hr>
+      </div>
+    </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <strong>Best Case Scenerio:</strong>
-    <p><%= @decision.best_case %></p>
-    <p class="text-right">Pipe Dream?</p>
-  </div>
+    <div class="row">
+      <div class="col-md-12">
+        <strong>Best Case Scenerio:</strong>
+        <p><%= @decision.best_case %></p>
+        <p class="text-right">Pipe Dream?</p>
+      </div>
 
-  <div class="col-md-12">
-    <strong>Worst Case Scenerio:</strong>
-    <p><%= @decision.worst_case %></p>
-    <p class="text-right">Apocalypse?</p>
-  </div>
-</div><hr>
+      <div class="col-md-12">
+        <strong>Worst Case Scenerio:</strong>
+        <p><%= @decision.worst_case %></p>
+        <p class="text-right">Apocalypse?</p>
+      </div>
+    </div><hr>
 
-<div class="row">
-  <div class='col-md-6'>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Gut Feelings</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% split_and_remove_leading_spaces(@decision.gut_feeling).each do |item| %>
+    <div class="row">
+      <div class='col-md-6'>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Gut Feelings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% split_and_remove_leading_spaces(@decision.gut_feeling).each do |item| %>
+              <tr>
+                <td><%= item %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <div class='col-md-6'>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Pros and Cons</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% split_and_remove_leading_spaces(@decision.pluses).each do |item| %>
+              <tr class="success">
+                <td><%= item %></td>
+              </tr>
+            <% end %>
+            <% split_and_remove_leading_spaces(@decision.minuses).each do |item| %>
+              <tr class="danger">
+                <td><%= item %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table">
+          <tbody>
+            <thead>
+              <tr>
+                <th>Intuitive Conclusion:</th>
+              </tr>
+            </thead>
+            <tr>
+              <td><%= @decision.intuitive_conclusion %><hr></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-md-6">
+        <table class="table">
+          <tbody>
+          <thead>
           <tr>
-            <td><%= item %></td>
+            <th>Rational Conclusion:</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-
-  <div class='col-md-6'>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Pros and Cons</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% split_and_remove_leading_spaces(@decision.pluses).each do |item| %>
-          <tr class="success">
-            <td><%= item %></td>
-          </tr>
-        <% end %>
-        <% split_and_remove_leading_spaces(@decision.minuses).each do |item| %>
-          <tr class="danger">
-            <td><%= item %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6">
-    <table class="table">
-      <tbody>
-        <thead>
+          </thead>
           <tr>
-            <th>Intuitive Conclusion:</th>
+            <td><%= @decision.rational_conclusion %><hr></td>
           </tr>
-        </thead>
-        <tr>
-          <td><%= @decision.intuitive_conclusion %><hr></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+          </tbody>
+        </table>
+      </div>
 
-  <div class="col-md-6">
-    <table class="table">
-      <tbody>
-      <thead>
-      <tr>
-        <th>Rational Conclusion:</th>
-      </tr>
-      </thead>
-      <tr>
-        <td><%= @decision.rational_conclusion %><hr></td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="col-md-12">
-    <p><strong>Decision:</strong> <%= @decision.final_decision %></p>
-    <p><strong>Next Steps:</strong> <%= @decision.next_steps %></p>
-  </div>
+      <div class="col-md-12">
+        <p><strong>Decision:</strong> <%= @decision.final_decision %></p>
+        <p><strong>Next Steps:</strong> <%= @decision.next_steps %></p>
+      </div>
+    </div>
+</div>
