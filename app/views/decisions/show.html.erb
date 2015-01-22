@@ -12,6 +12,18 @@
     </div>
 
     <div class="row">
+      <div class="col-md-6">
+        <strong>Decision Importance:</strong>
+        <p><%= @decision.decision_importance.capitalize %></p>
+      </div>
+
+      <div class="col-md-6">
+        <strong>Indecisiveness Level:</strong>
+        <p><%= @decision.indecisiveness_level.capitalize %></p>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col-md-12">
         <strong>Best Case Scenerio:</strong>
         <p><%= @decision.best_case %></p>
