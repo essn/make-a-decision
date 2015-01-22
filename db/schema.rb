@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121053821) do
+ActiveRecord::Schema.define(version: 20150122034625) do
 
   create_table "decisions", force: true do |t|
-    t.string   "decision"
     t.string   "dilemma"
     t.date     "needed_by"
     t.string   "decision_importance"
@@ -33,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150121053821) do
     t.boolean  "pipe_dream"
     t.boolean  "apocalypse"
     t.boolean  "private"
+    t.string   "final_decision"
   end
 
   create_table "users", force: true do |t|

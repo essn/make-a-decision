@@ -10,7 +10,7 @@ class DecisionsController < ApplicationController
     if @decision.save
       redirect_to @decision
     else
-      redirect_to root_path, notice: "can't create"
+      redirect_to new_decision_path, notice: "Please enter all fields."
     end
   end 
 
@@ -27,6 +27,6 @@ class DecisionsController < ApplicationController
   def decision_params
     params.require(:decision).permit(:dilemma, :needed_by, :decision_importance, :indecisiveness_level, :best_case,
                                      :worst_case, :gut_feeling, :pluses, :minuses, :intuitive_conclusion,
-                                     :rational_conclusion, :next_steps, :pipe_dream, :apocalypse)
+                                     :rational_conclusion, :next_steps, :pipe_dream, :apocalypse, :final_decision)
   end
 end
