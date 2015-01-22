@@ -9,6 +9,8 @@ class DecisionsController < ApplicationController
     @decision = current_user.decisions.build(decision_params)
     if @decision.save
       redirect_to @decision
+    else
+      redirect_to root_path, notice: "can't create"
     end
   end 
 

@@ -15,14 +15,16 @@
          <%= f.date_field :needed_by, class: "form-control" %>
        </div>
 
-       <div class="form-group">
+       <div class="form-group", id="'dropdowns">
          <%= f.label :decision_importance %>
-         <%= f.text_field :decision_importance, class: "form-control" %>
+         <%= f.select :decision_importance, options_for_select(["Trivial", "Non Lethal", "Worthwhile", "Weighty",
+                                                                "Life-Changing"]) %>
        </div>
 
-       <div class="form-group">
+       <div class="form-group", id="dropdowns'">
          <%= f.label :indecisiveness_level %>
-         <%= f.text_field :indecisiveness_level, class: "form-control" %>
+         <%= f.select :indecisiveness_level, options_for_select(["Wishy", "Washy", "Neutral", "Partisan",
+                                                                "Mind-Made-Up"]) %>
        </div>
      </div>
    </div>
@@ -102,6 +104,8 @@
  <% end %>
 
  <script>
+   $('.form-group select').addClass('form-control');
+
    $('#next-steps-btn').click(function(){
       $('#next-steps').slideToggle();
    });
