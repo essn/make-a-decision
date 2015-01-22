@@ -12,6 +12,8 @@
     
       <nav class="navbar-default">
         <div class="container-fluid">
+          <%= link_to('Home', root_path, class: 'navbar-text  btn btn-default')  %>
+          <%= link_to('About', welcome_about_path, class: 'navbar-text btn btn-default') %>
           <div class="navbar-text pull-right">
             <% if current_user %>
               You're signed in as: <%= current_user.email %> |
