@@ -32,6 +32,8 @@ gem 'devise'
 
 gem 'font-awesome-sass'
 
+gem 'fillerama'
+
 gem 'faker'
 
 

@@ -6,11 +6,14 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <div class = "container">
-    <div class="col-md-6 col-md-offset-3">
-      <nav class="navbar">
+
+  <body>
+   <div class = "container">
+    
+      <nav class="navbar-default">
         <div class="container-fluid">
+          <%= link_to('Home', root_path, class: 'navbar-text  btn btn-default')  %>
+          <%= link_to('About', welcome_about_path, class: 'navbar-text btn btn-default') %>
           <div class="navbar-text pull-right">
             <% if current_user %>
               You're signed in as: <%= current_user.email %> |
@@ -23,12 +26,14 @@
       </nav>
             <% if notice %>
       <div class="alert alert-warning" role="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
         <%= flash[:notice] %>
       </div>
       <% end %>
       <h1 class="text-center">Make A Decision</h1><hr>
       <%= yield %>
     </div>
-  </div>
-</body>
+
+  </body>
+
 </html>
