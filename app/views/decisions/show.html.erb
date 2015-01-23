@@ -4,10 +4,10 @@
         <p><strong>Dilemma:</strong> <%= @decision.dilemma %></p><hr>
       </div>
       <div class="col-md-6">
-        <p><strong>Date:</strong> <%= @decision.created_at.to_date.to_formatted_s(:long)  %></p><hr>
+        <p><strong>Date:</strong> <%= @decision.created_at %></p><hr>
       </div>
       <div class="col-md-6">
-        <p><strong>Decision Needed By:</strong> <%= @decision.needed_by.to_formatted_s(:long)  %></p><hr>
+        <p><strong>Decision Needed By:</strong> <%= @decision.needed_by %></p><hr>
       </div>
     </div>
 
