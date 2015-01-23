@@ -17,22 +17,22 @@ user1.save!
 
  10.times do
   decisions = Decision.new(
-    dilemma: Faker::Lorem.sentence,
+    dilemma: `fillerama`,
     needed_by: Faker::Business.credit_card_expiry_date,
     decision_importance: "trivial",
     indecisiveness_level: "washy",
-    best_case: Faker::Lorem.sentence,
-    worst_case: Faker::Lorem.sentence,
-    gut_feeling: "aklsjdkjasdf, asldkjaslkdjf, asdlkjasldkjf, aljsdflkajsdf, aslkdjfaklsdjf",
-    pluses: "akjlsdfkljas, asldkjasdflkjasdflkja, lkajsdflkjasdflkj, aljsdflkjasd",
-    minuses: "jkasdlkjas, asldkjfaslkdjf, asdlkfjalsdkjf, alskdjflksdajf",
-    intuitive_conclusion: Faker::Lorem.sentence,
-    rational_conclusion: Faker::Lorem.sentence,
-    next_steps: Faker::Lorem.sentence,
+    best_case: `fillerama`,
+    worst_case: `fillerama`,
+    gut_feeling: "#{`fillerama`}, #{`fillerama`}, #{`fillerama`}, #{`fillerama`}, ",
+    pluses: "#{`fillerama`}, #{`fillerama`}, #{`fillerama`}, #{`fillerama`}, ",
+    minuses: "#{`fillerama`}, #{`fillerama`}, #{`fillerama`}, #{`fillerama`}, ",
+    intuitive_conclusion: `fillerama`,
+    rational_conclusion: `fillerama`,
+    next_steps: `fillerama`,
     pipe_dream: true,
     apocalypse: false,
     user: user1,
-    final_decision: Faker::Lorem.sentence
+    final_decision: `fillerama`
   )
 
   decisions.save!
