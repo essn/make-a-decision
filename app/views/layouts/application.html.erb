@@ -8,15 +8,19 @@
 </head>
 
   <body>
+
    <div class = "container">
-    
-      <nav class="navbar-default">
+  
+      <nav class="navbar navbar-default">
         <div class="container-fluid">
+          <div class="navbar-header">
+            <div class='navbar-brand'>Make A Decision</div>
+          </div>
           <%= link_to('Home', root_path, class: 'navbar-text  btn btn-default')  %>
           <%= link_to('About', welcome_about_path, class: 'navbar-text btn btn-default') %>
           <div class="navbar-text pull-right">
             <% if current_user %>
-              You're signed in as: <%= current_user.email %> |
+              You're signed in as: <%= link_to current_user.email, user_path(current_user) %> |
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
             <% else %>
               <%= link_to "Sign In", new_user_session_path %> / <%= link_to "Sign Up", new_user_registration_path %>
@@ -30,9 +34,9 @@
         <%= flash[:notice] %>
       </div>
       <% end %>
-      <h1 class="text-center">Make A Decision</h1><hr>
       <%= yield %>
     </div>
+
 
   </body>
 

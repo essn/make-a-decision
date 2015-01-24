@@ -1,14 +1,14 @@
 class DecisionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
-  def new
-    @decision = Decision.new
+  def new  
+      @decision = Decision.new
   end
 
   def create
     @decision = current_user.decisions.build(decision_params)
     if @decision.save
-      redirect_to @decision
+      redirect_to [current_user, @decision]
     else
       render action: 'new'
     end
