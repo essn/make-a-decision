@@ -14,7 +14,7 @@
 <%= form_for [current_user, @decision] do |f| %>
    <div class="panel panel-default">
      <div class="panel-heading">
-       <h4 id="getting-started-btn" class="pointer">Getting Started</h4>
+       <h4 id="getting-started-btn" class="pointer">Getting Started <span class="caret" id="gs-option-caret"></span></h4>
      </div>
      <div id="getting-started" class="panel-body">
        <div class="form-group">
@@ -43,7 +43,7 @@
 
    <div class="panel panel-default">
      <div class="panel-heading">
-       <h4 id="pros-cons-btn" class="pointer">Pros and Cons</h4>
+       <h4 id="pros-cons-btn" class="pointer">Pros and Cons <span class="caret" id="pc-option-caret"></span></h4>
      </div>
      <div id="pros-cons" class="panel-body" style="display: none;">
        <div class="form-group">
@@ -81,7 +81,7 @@
 
    <div class="panel panel-default">
      <div class="panel-heading">
-       <h4 id="next-steps-btn" class="pointer">Next Steps</h4>
+       <h4 id="next-steps-btn" class="pointer">Next Steps <span class="caret" id="ns-option-caret"></span></h4>
      </div>
      <div id="next-steps" class="panel-body" style="display: none;">
        <div class="form-group">
@@ -119,7 +119,9 @@
  <script>
    $('.form-group select').addClass('form-control');
 
+
    $('#next-steps-btn').click(function(){
+      $('#ns-option-caret').fadeToggle();
      $('#next-steps').slideToggle();
      $('#getting-started').slideUp();
      $('#pros-cons').slideUp();
@@ -127,15 +129,18 @@
    });
 
    $('#getting-started-btn').click(function(){
+      $('#gs-option-caret').fadeToggle();
      $('#getting-started').slideToggle();
      $('#next-steps').slideUp();
      $('#pros-cons').slideUp();
    });
 
    $('#pros-cons-btn').click(function(){
+    $('#pc-option-caret').fadeToggle();
      $('#pros-cons').slideToggle();
      $('#getting-started').slideUp();
      $('#next-steps').slideUp();
    });
  </script>
+
 
