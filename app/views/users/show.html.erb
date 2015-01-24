@@ -1,6 +1,6 @@
+<h3><%= @user.email %>'s Saved Decisions</h3><hr>
 <div class="list-group">
   <% @user.decisions.each do |decision| %>
     <%= link_to decision.dilemma, user_decision_path(decision.user.id, decision.id), class: "list-group-item" %>
-  </br>
   <% end %>
 </div>

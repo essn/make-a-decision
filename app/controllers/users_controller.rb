@@ -5,6 +5,8 @@ class UsersController < ApplicationController
     @decisions = Decision.find(params[:id])
   end
 
+
+
   private
 
   def find_user

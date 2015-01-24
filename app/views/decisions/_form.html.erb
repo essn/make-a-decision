@@ -120,16 +120,22 @@
    $('.form-group select').addClass('form-control');
 
    $('#next-steps-btn').click(function(){
-      $('#next-steps').slideToggle();
+     $('#next-steps').slideToggle();
+     $('#getting-started').slideUp();
+     $('#pros-cons').slideUp();
+
    });
 
    $('#getting-started-btn').click(function(){
-      $('#getting-started').slideToggle();
+     $('#getting-started').slideToggle();
+     $('#next-steps').slideUp();
+     $('#pros-cons').slideUp();
    });
 
    $('#pros-cons-btn').click(function(){
-      $('#pros-cons').slideToggle();
+     $('#pros-cons').slideToggle();
+     $('#getting-started').slideUp();
+     $('#next-steps').slideUp();
    });
-
  </script>
 

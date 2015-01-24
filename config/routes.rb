@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'welcome/about'
 
-  resources :users do
+  resources :users, only: [:show] do
     resources :decisions
   end
 

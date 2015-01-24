@@ -6,38 +6,39 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-
-  <body>
-
-   <div class = "container">
-  
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <div class='navbar-brand'>Make A Decision</div>
-          </div>
-          <%= link_to('Home', root_path, class: 'navbar-text  btn btn-default')  %>
-          <%= link_to('About', welcome_about_path, class: 'navbar-text btn btn-default') %>
-          <div class="navbar-text pull-right">
-            <% if current_user %>
-              You're signed in as: <%= link_to current_user.email, user_path(current_user) %> |
-              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-            <% else %>
-              <%= link_to "Sign In", new_user_session_path %> / <%= link_to "Sign Up", new_user_registration_path %>
-            <% end %>
+<body>
+ <div class = "container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div >
+            <%= link_to 'Make A Decision', root_path, class: 'navbar-brand' %>
           </div>
         </div>
-      </nav>
-            <% if notice %>
+        <%= link_to 'About', welcome_about_path, class: 'navbar-btn btn btn-default' %>
+        <% if current_user %>
+          <%= link_to 'New Decision', new_user_decision_path(current_user), class: 'navbar-btn btn btn-default' %>
+          <%= link_to 'My Saved Decisions', user_path(current_user), class: 'navbar-btn btn btn-default' %>
+        <% end %>
+        <div class="navbar-text pull-right">
+          <% if current_user %>
+            You're signed in as: <%= link_to current_user.email, edit_user_registration_path(current_user) %> |
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign In", new_user_session_path %> / <%= link_to "Sign Up", new_user_registration_path %>
+          <% end %>
+        </div>
+      </div>
+    </nav>
+    <% if notice %>
       <div class="alert alert-warning" role="alert">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <%= flash[:notice] %>
       </div>
-      <% end %>
-      <%= yield %>
-    </div>
-
-
-  </body>
-
+    <% end %>
+   <div class="col-md-12">
+     <%= yield %>
+   </div>
+  </div>
+</body>
 </html>
