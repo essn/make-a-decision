@@ -20,6 +20,9 @@ class DecisionsController < ApplicationController
 
   def show
     @decision = User.find(params[:user_id]).decisions.find(params[:id])
+    if @decision.private && @decision.user != current_user
+      redirect_to root_path, notice: "That decision is private!!!"
+    end
   end
 
   private
