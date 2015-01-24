@@ -1,7 +1,6 @@
-
 <div class="list-group">
-<% @decisions.each do |decision| %>
-<%= link_to decision.dilemma, user_decision_path(decision.user.id, decision.id), class: "list-group-item" %>
-</br>
-<% end %>
+  <% @user.decisions.each do |decision| %>
+    <%= link_to decision.dilemma, user_decision_path(decision.user.id, decision.id), class: "list-group-item" %>
+  </br>
+  <% end %>
 </div>
