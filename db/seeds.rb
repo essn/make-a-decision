@@ -3,7 +3,7 @@ require 'faker'
  5.times do
    user = User.new(
      email:    Faker::Internet.email,
-     password: Faker::Lorem.characters(10),
+     password: Faker::Lorem.characters(10)
    )
    user.save!
  end
@@ -31,11 +31,10 @@ user1.save!
     next_steps: `fillerama`,
     pipe_dream: true,
     apocalypse: false,
-    user: user1,
+    user_id: user1.id,
     final_decision: `fillerama`
   )
 
   decisions.save!
 end
-
 

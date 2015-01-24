@@ -10,16 +10,16 @@ class DecisionsController < ApplicationController
     if @decision.save
       redirect_to @decision
     else
-      redirect_to new_decision_path, notice: "Please enter all fields."
+      render action: 'new'
     end
   end 
 
   def index
-
+    @decision.all
   end
 
   def show
-    @decision = Decision.find(params[:id])
+    @decision = User.find(params[:user_id]).decisions.find(params[:id])
   end
 
   private
