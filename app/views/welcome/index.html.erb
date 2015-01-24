@@ -6,7 +6,8 @@
 
 <div class="row">
   <div class="col-md-12 text-center">
-    <%= link_to('Get started', new_decision_path, class: 'btn btn-default btn-lg')  %>
+    <%= link_to('Get started', new_user_decision_path(current_user), class: 'btn btn-default btn-lg') if current_user %>
+    <%= link_to('Sign in', new_user_session_path, class: 'btn btn-default btn-lg') unless current_user %>
   </div>
 </div>
 

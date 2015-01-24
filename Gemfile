@@ -27,13 +27,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'bootstrap-sass', '~> 3.3.2'
-
 gem 'devise'
-
 gem 'font-awesome-sass'
-
 gem 'fillerama'
-
 gem 'faker'
 
 

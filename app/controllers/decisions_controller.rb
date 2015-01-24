@@ -15,11 +15,11 @@ class DecisionsController < ApplicationController
   end 
 
   def index
-
+    @decision.all
   end
 
   def show
-    @decision = Decision.find(params[:id])
+    @decision = User.find(params[:user_id]).decisions.find(params[:id])
   end
 
   private

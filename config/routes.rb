@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   get 'welcome/about'
 
-  resources :decisions
+  resources :users do
+    resources :decisions
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
