@@ -16,7 +16,7 @@ class DecisionsController < ApplicationController
   end 
 
   def index
-    @decision = Decision.all
+    @decisions = Decision.all
   end
 
   def show

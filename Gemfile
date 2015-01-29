@@ -31,6 +31,7 @@ gem 'devise'
 gem 'font-awesome-sass'
 gem 'fillerama'
 gem 'faker'
+gem 'annotate'
 
 
 # Use ActiveModel has_secure_password
