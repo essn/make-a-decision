@@ -1,5 +1,6 @@
 class Decision < ActiveRecord::Base
   belongs_to :user
+  has_many :likes
 
   validates :dilemma, :needed_by, :decision_importance, :indecisiveness_level, :best_case,
             :worst_case, :gut_feeling, :pluses, :minuses, :intuitive_conclusion,
