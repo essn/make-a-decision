@@ -21,6 +21,8 @@ class DecisionsController < ApplicationController
 
   def show
     @decision = User.find(params[:user_id]).decisions.find(params[:id])
+    @comments = @decision.comments
+    @comment = @decision.comments.new
 
     redirect_to root_path, notice: "This decision is private." if @decision.private && @decision.user != current_user
   end

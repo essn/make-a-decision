@@ -115,4 +115,18 @@
         <p><strong>Next Steps:</strong> <%= @decision.next_steps %></p>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <%= render partial: 'comments/form', locals: {user: current_user, decision: @decision, comment: @comment} %>
+      </div>
+
+      <small>
+        <div class="col-md-12">
+          <p>
+            <%= render @decision.comments %>
+          </p>
+        </div>
+      </small>
+    </div>
 </div>

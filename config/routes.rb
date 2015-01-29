@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get 'welcome/about'
 
   resources :users, only: [:show] do
-    resources :decisions
+    resources :decisions do
+      resources :comments, only: [:create]
+    end
   end
 
   get '/decisions', to: 'decisions#index', as: 'decisions'
